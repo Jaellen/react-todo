@@ -34,19 +34,19 @@ describe('TodoAPI', () => {
   });
 
   describe('getTodos', () => {
-    it('should return empty array for bad localStorage data', () => {
+    it('should return empty array for bad localstorage data', () => {
       var actualTodos = TodoAPI.getTodos();
       expect(actualTodos).toEqual([]);
     });
 
-    it('should return todos if valid array in localStorage', () => {
+    it('should return todo if valid array in localstorage', () => {
       var todos = [{
         id: 23,
         test: 'test all files',
         completed: false
       }];
-      localStorage.setItem('todos', JSON.stringify(todos));
 
+      localStorage.setItem('todos', JSON.stringify(todos));
       var actualTodos = TodoAPI.getTodos();
 
       expect(actualTodos).toEqual(todos);
@@ -54,24 +54,19 @@ describe('TodoAPI', () => {
   });
 
   describe('filterTodos', () => {
-    var todos = 
-    [
-      {
-        id: 1,
-        text: 'Some text here',
-        completed: true
-      },
-      {
-        id: 2,
-        text: 'Other text here',
-        completed: false
-      },
-      {
-        id: 3,
-        text: 'Some text here',
-        completed: true
-      }
-    ];
+    var todos = [{
+      id: 1,
+      text: 'Some text here',
+      completed: true
+    },{
+      id: 2,
+      text: 'Other text here',
+      completed: false
+    },{
+      id: 3,
+      text: 'Some text here',
+      completed: true
+    }];
 
     it('should return all items if showCompleted is true', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, true, '');
@@ -98,27 +93,4 @@ describe('TodoAPI', () => {
       expect(filteredTodos.length).toBe(3);
     });
   });
-}); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});

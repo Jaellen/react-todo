@@ -1,9 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var {Provider} = require('react-redux');
-var expect = require('expect');
-var $ = require('jQuery');
 var TestUtils = require('react-addons-test-utils');
+var expect = require('expect');
+var $ = require('jquery');
 
 import {configure} from 'configureStore';
 import ConnectedTodoList, {TodoList} from 'TodoList';
@@ -14,24 +14,20 @@ describe('TodoList', () => {
     expect(TodoList).toExist();
   });
 
-  it('should render one todo component for each todo item', () => {
-    var todos = [
-      {
-        id: 1,
-        text: 'Do something',
-        completed: false,
-        completedAt: undefined,
-        created: 500
-      },
-      {
-        id: 2,
-        text: 'Check mail',
-        completed: false,
-        completedAt: undefined,
-        created: 500
-      }
-    ];
-
+  it('should render one Todo component for each todo item', () => {
+    var todos = [{
+      id: 1,
+      text: 'Do something',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 500
+    }, {
+      id: 2,
+      text: 'Check mail',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 500
+    }];
     var store = configure({
       todos
     });

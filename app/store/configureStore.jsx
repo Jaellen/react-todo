@@ -8,7 +8,7 @@ export var configure = (initialState = {}) => {
     todos: todosReducer
   });
 
-  var store = redux.createStore(reducer, initialState, redux.compose (
+  var store = redux.createStore(reducer, initialState, redux.compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 

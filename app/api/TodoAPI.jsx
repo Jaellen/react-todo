@@ -2,7 +2,7 @@ var $ = require('jquery');
 
 module.exports = {
   setTodos: function (todos) {
-    if($.isArray(todos)) {
+    if ($.isArray(todos)) {
       localStorage.setItem('todos', JSON.stringify(todos));
       return todos;
     }
@@ -13,18 +13,18 @@ module.exports = {
 
     try {
       todos = JSON.parse(stringTodos);
-    }
-    catch (e) {
+    } catch (e) {
 
     }
+
     return $.isArray(todos) ? todos : [];
   },
   filterTodos: function (todos, showCompleted, searchText) {
-    var filteredTodos = todos; 
+    var filteredTodos = todos;
 
     // Filter by showCompleted
     filteredTodos = filteredTodos.filter((todo) => {
-      return !todo.completed || showCompleted;  
+      return !todo.completed || showCompleted;
     });
 
     // Filter by searchText
@@ -37,25 +37,13 @@ module.exports = {
     filteredTodos.sort((a, b) => {
       if (!a.completed && b.completed) {
         return -1;
-      }
-      else if (a.completed && !b.completed) {
+      } else if (a.completed && !b.completed) {
         return 1;
-      }
-      else {
+      } else {
         return 0;
       }
-    })
+    });
 
     return filteredTodos;
   }
 };
-
-
-
-
-
-
-
-
-
-

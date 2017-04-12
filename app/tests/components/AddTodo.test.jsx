@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var expect = require('expect');
-var $ = require('jQuery');
 var TestUtils = require('react-addons-test-utils');
+var expect = require('expect');
+var $ = require('jquery');
 
 var {AddTodo} = require('AddTodo');
 
@@ -27,7 +27,7 @@ describe('AddTodo', () => {
     expect(spy).toHaveBeenCalledWith(action);
   });
 
-  it('should not dipatch ADD_TODO when invalid todo text', () => {
+  it('should not dispatch ADD_TODO when invalid todo text', () => {
     var todoText = '';
     var spy = expect.createSpy();
     var addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy}/>);
