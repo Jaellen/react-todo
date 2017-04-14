@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 try {
-  var config = {  
+  var config = {
     apiKey: "AIzaSyBLwL63abxJLn9UcbELIajAyN0yYk1esFU",
     authDomain: "todo-app-f4312.firebaseapp.com",
     databaseURL: "https://todo-app-f4312.firebaseio.com",
